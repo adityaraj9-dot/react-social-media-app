@@ -34,10 +34,7 @@ export default function PostCard({id,content,created_at,photos,profiles:authorPr
         }
       })
   }
-  function fetchLikes() {
-    supabase.from('likes').select().eq('post_id', id)
-      .then(result => setLikes(result.data));
-  }
+ 
   function fetchComments() {
     supabase.from('posts')
       .select('*, profiles(*)')
